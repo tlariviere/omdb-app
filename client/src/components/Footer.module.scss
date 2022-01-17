@@ -1,0 +1,29 @@
+@import "../styles/globals.scss";
+@import "../styles/constants.scss";
+
+$foregroundColor: #5e5a58;
+
+.Footer {
+  background-color: $bannerBgColor;
+  color: $foregroundColor;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+
+  > div {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    .SocialNetwork {
+      color: $foregroundColor;
+      font-size: 1.4em;
+
+      &:hover {
+        color: #998676;
+      }
+    }
+  }
+}
