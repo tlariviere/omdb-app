@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useQueryClient, useQuery } from "react-query";
 
-import type { Search as SearchType } from "../utils/types";
-import fetchJson from "../utils/fetchJson";
-import GenericError from "../components/GenericError";
-import Loading from "../components/Loading";
-import MovieList from "../components/MovieList";
-import config from "../constants/search";
+import type { Search as SearchType } from "../../utils/types";
+import fetchJson from "../../utils/fetchJson";
+import GenericError from "../../components/GenericError";
+import Loading from "../../components/Loading";
+import MovieList from "../../components/MovieList";
+import config from "../../constants/search";
 import styles from "./Search.module.scss";
 
 const fetchSearch = async (

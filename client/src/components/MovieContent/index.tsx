@@ -1,10 +1,10 @@
 import React from "react";
 
-import type { Movie } from "../utils/types";
-import MetaData from "./MetaData";
-import Ratings from "./Ratings";
-import Details from "./MovieDetails";
-import Poster from "./Poster";
+import type { Movie } from "../../utils/types";
+import MetaData from "../MetaData";
+import Ratings from "../Ratings";
+import Details from "../MovieDetails";
+import Poster from "../Poster";
 import styles from "./MovieContent.module.scss";
 
 const Plot: React.FC = ({ children }) => {

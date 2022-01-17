@@ -1,9 +1,9 @@
 import React from "react";
 
-import type { Search } from "../utils/types";
-import config from "../constants/search";
-import MovieEntry from "./MovieEntry";
-import Pagination from "./Pagination";
+import type { Search } from "../../utils/types";
+import config from "../../constants/search";
+import MovieEntry from "../MovieEntry";
+import Pagination from "../Pagination";
 import styles from "./MovieList.module.scss";
 
 interface MovieListProps {

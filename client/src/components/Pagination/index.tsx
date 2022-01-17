@@ -1,6 +1,6 @@
 import React from "react";
 
-import config from "../constants/search";
+import config from "../../constants/search";
 import styles from "./Pagination.module.scss";
 
 interface PaginationProps {

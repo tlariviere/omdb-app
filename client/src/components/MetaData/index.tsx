@@ -1,6 +1,6 @@
 import React from "react";
 
-import capitalize from "../utils/capitalize";
+import capitalize from "../../utils/capitalize";
 import styles from "./MetaData.module.scss";
 
 interface MetaDataProps {
