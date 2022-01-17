@@ -1,0 +1,20 @@
+@import "../styles/globals.scss";
+@import "../styles/constants.scss";
+
+.Header {
+  @extend .CenteredColumn;
+
+  width: 100%;
+  background-color: $bannerBgColor;
+
+  nav {
+    @extend .Container;
+
+    padding: 0.5rem 2rem;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
