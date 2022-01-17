@@ -23,3 +23,16 @@ export interface Movie {
   imdbRating: string;
   imdbVotes: string;
 }
+
+export interface SearchEntry {
+  Poster: string;
+  Title: string;
+  Type: string;
+  Year: string;
+  imdbID: string;
+}
+
+export interface Search {
+  Search: SearchEntry[];
+  totalResults: string;
+}
