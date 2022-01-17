@@ -2,4 +2,14 @@
 
 .App {
   @extend .CenteredColumn;
+
+  main {
+    @extend .Container;
+
+    > * {
+      @extend .CenteredColumn;
+
+      padding: 2rem 2rem 4rem 2rem;
+    }
+  }
 }
