@@ -1,0 +1,14 @@
+@import "../../styles/globals.scss";
+
+.MovieList {
+  @extend .CenteredColumn;
+  gap: 3rem;
+  padding: 2rem 0;
+
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+  }
+}

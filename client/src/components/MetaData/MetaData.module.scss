@@ -1,0 +1,21 @@
+@import "../../styles/globals.scss";
+
+.MetaData {
+  .Genres {
+    margin-top: 0.65rem;
+
+    > span {
+      display: inline-block;
+      margin-top: 1px;
+      padding: 2px 16px;
+      background-color: #6b6766;
+      color: white;
+      border-radius: 20px;
+      box-sizing: border-box;
+
+      &:not(:first-child) {
+        margin-left: 1px;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@import "bootstrap";
+
+.MovieDetails {
+  table {
+    @extend .table;
+    @extend .table-hover;
+
+    width: 100%;
+  }
+}

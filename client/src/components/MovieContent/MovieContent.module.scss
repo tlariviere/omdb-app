@@ -1,0 +1,24 @@
+.MovieContent {
+  width: 100%;
+  margin-bottom: 4rem;
+
+  > div {
+    padding: 0 2rem;
+  }
+
+  > div:nth-of-type(2) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .Plot > * {
+    margin: 1rem 0;
+  }
+}

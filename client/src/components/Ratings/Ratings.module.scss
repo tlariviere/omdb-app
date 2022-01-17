@@ -1,0 +1,20 @@
+.Ratings {
+  margin-bottom: 1rem;
+
+  .Star {
+    color: #ffce2e;
+    font-size: 2em;
+    margin: 2px;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    p > span {
+      font-weight: 550;
+      font-size: 1.6em;
+    }
+  }
+}
