@@ -4,9 +4,13 @@ import logger from "morgan";
 import helmet from "helmet";
 import config from "./constants/server";
 
+import apiRouter from "./routes";
+
 const app = express();
 app.use(logger("dev"));
 app.use(helmet());
+
+app.use("/api", apiRouter);
 
 if (process.env.NODE_ENV === "production") {
   const pages = ["/movie/:token", "/search"];
