@@ -1,0 +1,27 @@
+{
+  "name": "omdb-app",
+  "version": "0.1.0",
+  "description": "Fullstack application to explore omdb movie database",
+  "private": true,
+  "main": "./dist/server.js",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "start": "npm run start --workspace=server & npm run start --workspace=client",
+    "prod": "NODE_ENV=production node .",
+    "build": "npm run build --workspaces"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlariviere/omdb-app.git"
+  },
+  "keywords": [],
+  "author": "Thibaud LARIVIERE",
+  "homepage": "https://github.com/tlariviere/omdb-app#readme",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
+}

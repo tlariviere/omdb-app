@@ -1,0 +1,18 @@
+{
+  "name": "@tlariviere/omdb-app-server",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "npx ts-node ./src/server.ts",
+    "watch": "npx nodemon -e ts,json",
+    "build": "npx tsc"
+  },
+  "keywords": [],
+  "author": "Thibaud LARIVIERE",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}
