@@ -1,13 +1,14 @@
 import type { FormEventHandler } from "react";
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useQuery } from "react-query";
+import { useQueryClient, useQuery } from "react-query";
 
 import type { Search as SearchType } from "../utils/types";
 import fetchJson from "../utils/fetchJson";
 import GenericError from "../components/GenericError";
 import Loading from "../components/Loading";
 import MovieList from "../components/MovieList";
+import config from "../constants/search";
 import styles from "./Search.module.scss";
 
 const fetchSearch = async (
@@ -28,6 +29,7 @@ const computeSearchParams = (title: string, page: number) => {
 };
 
 const Search: React.FC = () => {
+  const queryClient = useQueryClient();
   const [search, setSearch] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -45,6 +47,23 @@ const Search: React.FC = () => {
   useEffect(() => {
     setSearch(title);
   }, [title]);
+
+  // Prefetch next page
+  useEffect(() => {
+    if (data) {
+      const nbPage = Math.ceil(
+        parseInt(data.totalResults, 10) / config.pageSize
+      );
+
+      if (page < nbPage - 1) {
+        void queryClient.prefetchQuery(
+          ["search", title, page + 1],
+          ({ signal }) =>
+            fetchSearch(computeSearchParams(title, page + 1), signal)
+        );
+      }
+    }
+  }, [data, title, page, queryClient]);
 
   const handleSubmit: FormEventHandler = (event) => {
     event.preventDefault();
