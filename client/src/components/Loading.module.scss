@@ -1,0 +1,8 @@
+@import "bootstrap";
+
+.Loading > span {
+  @extend .spinner-border;
+  @extend .spinner-border-sm;
+
+  margin-right: 0.65rem;
+}
