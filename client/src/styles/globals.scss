@@ -54,3 +54,10 @@ div#root {
     width: 100%;
   }
 }
+
+.MiddleDots {
+  span:not(:first-child)::before {
+    content: "\00B7";
+    margin: 0 5px;
+  }
+}
