@@ -1,0 +1,5 @@
+@import "../styles/globals.scss";
+
+.App {
+  @extend .CenteredColumn;
+}

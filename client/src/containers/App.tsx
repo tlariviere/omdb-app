@@ -1,5 +1,7 @@
 import React from "react";
 
-const App: React.FC = () => <div />;
+import styles from "./App.module.scss";
+
+const App: React.FC = () => <div className={styles.App} />;
 
 export default App;
