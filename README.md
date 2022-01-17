@@ -64,7 +64,6 @@ Means of improvement:
 ### About the code
 
 - Factorize some hook logic into custom hooks to clarify the code.
-- Split files containing several components into smaller files of a single component.
 - Prefetch next page images in movie search.
 - Eject create-react-app and edit scripts to allow linter to run when compiling (automatic eslint check is disabled due to conflicts and should be run manually).
 - Setup docker image and store them on github Containers at every release (with workflow).

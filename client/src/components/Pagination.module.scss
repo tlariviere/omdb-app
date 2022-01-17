@@ -1,0 +1,13 @@
+@import "bootstrap";
+
+.Pagination {
+  > div {
+    button {
+      @extend .btn-outline-dark;
+
+      &.Active {
+        @extend .btn-dark;
+      }
+    }
+  }
+}
