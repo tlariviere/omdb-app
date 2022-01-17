@@ -1,5 +1,6 @@
 import type { FormEventHandler } from "react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useQuery } from "react-query";
 
 import type { Search as SearchType } from "../utils/types";
@@ -28,18 +29,26 @@ const computeSearchParams = (title: string, page: number) => {
 
 const Search: React.FC = () => {
   const [search, setSearch] = useState("");
-  const [title, setTitle] = useState("");
-  const [page, setPage] = useState(0);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const title = searchParams.get("title") ?? "";
+  const page = searchParams.has("page")
+    ? parseInt(searchParams.get("page") as string, 10)
+    : 0;
 
   const { isLoading, isFetched, isError, error, data } = useQuery(
     ["search", title, page],
-    ({ signal }) => fetchSearch(computeSearchParams(title, page), signal),
+    ({ signal }) => fetchSearch(searchParams, signal),
     { enabled: title.length > 0 }
   );
 
+  useEffect(() => {
+    setSearch(title);
+  }, [title]);
+
   const handleSubmit: FormEventHandler = (event) => {
     event.preventDefault();
-    setTitle(search);
+    setSearchParams(computeSearchParams(search, page));
   };
 
   return (
@@ -69,7 +78,9 @@ const Search: React.FC = () => {
           <MovieList
             search={data as SearchType}
             page={page}
-            setPage={setPage}
+            setPage={(newPage: number) =>
+              setSearchParams(computeSearchParams(title, newPage))
+            }
           />
         )
       )}
