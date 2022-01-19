@@ -20,7 +20,7 @@ const SocialNetwork: React.FC<SocialNetworkProps> = ({ href, children }) => (
 const Footer: React.FC = () => (
   <footer className={styles.Footer}>
     <div>
-      <SocialNetwork href="https://www.linkedin.com/in/thibaud-larivi%C3%A8re-0451655b/">
+      <SocialNetwork href="https://www.linkedin.com/in/thibaud-lariviere">
         <i className="bi bi-linkedin" />
       </SocialNetwork>
       <SocialNetwork href="https://github.com/tlariviere">
