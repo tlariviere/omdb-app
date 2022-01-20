@@ -10,6 +10,11 @@
       @extend .CenteredColumn;
 
       padding: 2rem 2rem 4rem 2rem;
+
+      @include isExtraSmallScreen {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+      }
     }
   }
 }

@@ -4,8 +4,12 @@
 .Search {
   margin-bottom: 2rem;
 
+  > h1 {
+    text-align: center;
+  }
+
   > form {
-    padding: 2rem;
+    padding: 2rem 1rem;
     width: 100%;
     max-width: 64rem;
 
@@ -15,6 +19,11 @@
 
     button[type = "submit"] {
       @extend .btn-secondary;
+    }
+
+    @include isExtraSmallScreen {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }

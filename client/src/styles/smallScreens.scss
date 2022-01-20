@@ -5,3 +5,9 @@
     @content;
   }
 }
+
+@mixin isExtraSmallScreen {
+  @media screen and (max-width: $xsScreenWidth) {
+    @content;
+  }
+}
