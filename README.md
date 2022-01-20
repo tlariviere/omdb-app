@@ -34,8 +34,6 @@ In production mode only one server is launched which serve client app static fil
 
 ### `npm run prod`
 
-**Note: Work in progress: CSP issues, see Todos.**
-
 Launches the server in production mode on port 8080 by default.\
 Requires to build the project beforehand!\
 
@@ -69,7 +67,6 @@ Means of improvement:
 - Setup docker image and store them on github Containers at every release (with workflow).
 - Remove hardcoded OMDb Api key, store it has github secret and build docker image with it as built-time secret.
 - Add more unit tests.
-- Fix CSP issues fetching posters in production mode.
 
 ### About features
 
