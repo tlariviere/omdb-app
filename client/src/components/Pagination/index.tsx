@@ -1,6 +1,5 @@
 import React from "react";
 
-import config from "../../constants/search";
 import styles from "./Pagination.module.scss";
 
 interface PaginationProps {
@@ -8,6 +7,7 @@ interface PaginationProps {
   pageStartIndex: number;
   page: number;
   setPage: (page: number) => void;
+  maxDisplayedPage: number;
 }
 
 const Pagination: React.FC<PaginationProps> = ({
@@ -15,6 +15,7 @@ const Pagination: React.FC<PaginationProps> = ({
   pageStartIndex,
   page,
   setPage,
+  maxDisplayedPage,
 }) => {
   return (
     <nav className={styles.Pagination}>
@@ -26,7 +27,7 @@ const Pagination: React.FC<PaginationProps> = ({
         >
           Previous
         </button>
-        {Array(Math.min(nbPage, config.maxDisplayedPage))
+        {Array(Math.min(nbPage, maxDisplayedPage))
           .fill(0)
           .map((_, index) => {
             const pageIndex = pageStartIndex + index;

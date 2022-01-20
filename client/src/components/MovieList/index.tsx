@@ -4,6 +4,7 @@ import type { Search } from "../../utils/types";
 import config from "../../constants/search";
 import MovieEntry from "../MovieEntry";
 import Pagination from "../Pagination";
+import useWindowSize from "../../hooks/useWindowSize";
 import styles from "./MovieList.module.scss";
 
 interface MovieListProps {
@@ -13,12 +14,14 @@ interface MovieListProps {
 }
 
 const MovieList: React.FC<MovieListProps> = ({ search, page, setPage }) => {
+  const { width } = useWindowSize();
+  const maxDisplayedPage =
+    width && width < 550
+      ? config.maxDisplayedPageXsScreen
+      : config.maxDisplayedPage;
   const nbPage = Math.ceil(parseInt(search.totalResults, 10) / config.pageSize);
   const pageStartIndex = Math.max(
-    Math.min(
-      page - config.maxDisplayedPage / 2,
-      nbPage - config.maxDisplayedPage
-    ),
+    Math.min(page - maxDisplayedPage / 2, nbPage - maxDisplayedPage),
     0
   );
 
@@ -35,6 +38,7 @@ const MovieList: React.FC<MovieListProps> = ({ search, page, setPage }) => {
           pageStartIndex={pageStartIndex}
           page={page}
           setPage={setPage}
+          maxDisplayedPage={maxDisplayedPage}
         />
       )}
     </div>
