@@ -8,7 +8,16 @@ import apiRouter from "./routes";
 
 const app = express();
 app.use(logger("dev"));
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        "img-src": ["'self'", "data:", "m.media-amazon.com"],
+      },
+    },
+    crossOriginEmbedderPolicy: false,
+  })
+);
 
 app.use("/api", apiRouter);
 
