@@ -1,3 +1,5 @@
+@import "../../styles/smallScreens.scss";
+
 .Ratings {
   margin-bottom: 1rem;
 
@@ -16,5 +18,10 @@
       font-weight: 550;
       font-size: 1.6em;
     }
+  }
+
+  @include isExtraSmallScreen {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
   }
 }

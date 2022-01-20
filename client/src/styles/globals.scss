@@ -33,6 +33,10 @@ button {
 h1 {
   font-size: 3.2em;
   font-weight: 600;
+
+  @include isExtraSmallScreen {
+    text-align: center;
+  }
 }
 
 div#root {
